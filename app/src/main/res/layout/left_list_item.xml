@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:background="@color/gray100"
+    android:gravity="center_vertical"
     android:orientation="horizontal">
 
     <TextView
@@ -10,14 +11,27 @@
         android:layout_width="2dp"
         android:layout_height="40dp"
         android:layout_gravity="center_vertical"
-        android:background="@color/red"
-        android:visibility="gone" />
+        android:background="@color/red" />
 
-    <TextView
-        android:id="@+id/left_list_item"
+    <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:textSize="12sp" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/head_img" />
+
+        <TextView
+            android:id="@+id/left_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:textSize="12sp" />
+    </LinearLayout>
 </LinearLayout>

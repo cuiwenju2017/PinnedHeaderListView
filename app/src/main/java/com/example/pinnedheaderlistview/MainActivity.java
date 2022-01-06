@@ -15,21 +15,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean isScroll = true;
     private LeftListAdapter adapter;
+    private ListView left_listview, pinnedListView;
+    private boolean isShowOrNot = false;
+    private ImageView iv;
+
+    private boolean[] flagArray = {true, false, false, false, false, false, false, false, false, false,
+            false, false, false, false, false, false, false, false, false, false, false};
     private String[] leftStr = new String[]{"推荐", "火锅", "家常菜", "烧烤", "日本料理", "四川冒菜",
-            "兰州拉面 "};
-    private boolean[] flagArray = {true, false, false, false, false, false, false};
+            "兰州拉面1", "兰州拉面2", "兰州拉面3", "兰州拉面4", "兰州拉面5", "兰州拉面6", "兰州拉面7", "兰州拉面8",
+            "兰州拉面9", "兰州拉面10", "兰州拉面11", "兰州拉面12", "兰州拉面13", "兰州拉面14", "兰州拉面15"};
     private String[][] rightStr = new String[][]{{"狗不理包子1", "狗不理包子2", "狗不理包子3"},
             {"火锅1", "火锅2", "火锅3"},
             {"家常菜1", "家常菜2", "家常菜3"},
-            {"BB霜", "洗面奶", "面膜"},
-            {"佳洁士牙膏", "飘柔洗头膏", "立白洗衣液"},
-            {"护手霜", "暖手宝", "耳暖"},
-            {"帽子", "围脖", "手套"}
+            {"烧烤1", "烧烤2", "烧烤3"},
+            {"日本料理1", "日本料理2", "日本料理3"},
+            {"四川冒菜1", "四川冒菜2", "四川冒菜3"},
+            {"兰州拉面1", "兰州拉面1"},
+            {"兰州拉面2", "兰州拉面2"},
+            {"兰州拉面3", "兰州拉面3"},
+            {"兰州拉面4", "兰州拉面4"},
+            {"兰州拉面5", "兰州拉面5"},
+            {"兰州拉面6", "兰州拉面6"},
+            {"兰州拉面7", "兰州拉面7"},
+            {"兰州拉面8", "兰州拉面8"},
+            {"兰州拉面9", "兰州拉面9", "兰州拉面9", "兰州拉面9"},
+            {"兰州拉面10", "兰州拉面10"},
+            {"兰州拉面11", "兰州拉面11"},
+            {"兰州拉面12", "兰州拉面12"},
+            {"兰州拉面13", "兰州拉面13"},
+            {"兰州拉面14", "兰州拉面14"},
+            {"兰州拉面15", "兰州拉面15"},
     };
-    private ListView left_listview, pinnedListView;
-
-    private boolean isShowOrNot = false;
-    private ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left_listview = findViewById(R.id.left_listview);
         final MainSectionedAdapter sectionedAdapter = new MainSectionedAdapter(MainActivity.this, leftStr, rightStr);
         pinnedListView.setAdapter(sectionedAdapter);
+
         adapter = new LeftListAdapter(MainActivity.this, leftStr, flagArray);
         left_listview.setAdapter(adapter);
         left_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
